@@ -20,9 +20,9 @@ fun main(args: Array<String>) {
 
     val result: String = when(day) {
         1 -> Day01.solve(inputs).toString()
-        else -> "".also { panic("Day ${day} is unknown.") }
+        else -> "".also { panic("Day $day is unknown.") }
     }
-    print(result)
+    println(result)
 }
 
 fun panic(message: String) {
