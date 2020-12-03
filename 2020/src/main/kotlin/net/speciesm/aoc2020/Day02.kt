@@ -1,22 +1,15 @@
 package net.speciesm.aoc2020
 
 object Day02 {
-    private const val EXPECTED_MATCHES = 5
-    private val pattern = Regex("""^(\d+)-(\d+) (.): (.*)$""")
+    private val policy = Regex("""^(\d+)-(\d+) (.): (.*)$""")
 
-    private fun isValid(input: String): Boolean {
-        val matches = pattern.find(input)
-        if (matches != null && matches.groups.size == EXPECTED_MATCHES) {
-            val min = matches.groups[1]!!.value.toInt()
-            val max = matches.groups[2]!!.value.toInt()
-            val char = matches.groups[3]!!.value.first()
-            val pass = matches.groups[4]!!.value
-            val count = pass.filter { it == char }.count()
-            return (count in min..max)
-        }
-        return false
+    private fun isValid(min: Int, max: Int, char: Char, pass: String): Boolean =
+        (pass.filter { it == char }.count() in min..max)
+
+    fun solve(inputs: List<String>): Int {
+        return inputs
+            .mapNotNull { policy.find(it)?.destructured }
+            .count { (min, max, char, pass) -> isValid(min.toInt(), max.toInt(), char.first(), pass) }
     }
-
-    fun solve(inputs: List<String>) = inputs.filter { isValid(it) }.count()
 }
 
