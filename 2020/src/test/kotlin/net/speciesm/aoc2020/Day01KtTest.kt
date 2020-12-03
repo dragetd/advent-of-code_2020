@@ -3,8 +3,8 @@ package net.speciesm.aoc2020
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-internal class Day01KtTest {
-    val testData = """
+internal class Day01Test {
+    private val testData = """
         1721
         979
         366
@@ -14,12 +14,7 @@ internal class Day01KtTest {
         """.trimIndent().lines()
 
     @Test
-    fun `day01 works`() {
-        assertThat(day01(testData)).isEqualTo(514579)
-    }
-
-    @Test
-    fun `day01_alternative works`() {
-        assertThat(day01_alternative(testData)).isEqualTo(514579)
+    fun `day01 solves`() {
+        assertThat(Day01.solve(testData)).isEqualTo(514579)
     }
 }
