@@ -14,4 +14,9 @@ internal class Day02Test {
     fun solves() {
         assertThat(Day02.solve(testData)).isEqualTo(2)
     }
+
+    @Test
+    fun solves2() {
+        assertThat(Day02.solve2(testData)).isEqualTo(1)
+    }
 }
