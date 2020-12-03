@@ -27,6 +27,7 @@ fun main(args: Array<String>) {
 
     val result: String = when (day) {
         1 -> "${Day01.solve(inputs)}, ${Day01.solve2(inputs)}"
+        2 -> "${Day02.solve(inputs)}"
         3 -> "${Day03.solve(inputs)}"
         else -> "".also { panic("Day $day is unknown.") }
     }
