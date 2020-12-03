@@ -9,17 +9,24 @@ import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
     val argParser = ArgParser("AoC2020")
-    val inputFileName by argParser.option(ArgType.String,"input-file",
-        "i", "Input file").required()
-    val day by argParser.option(ArgType.Int, "day",
-        "d", "Number of the challenge/day").required()
+    val inputFileName by argParser.option(
+        ArgType.String, "input-file",
+        "i", "Input file"
+    ).required()
+    val day by argParser.option(
+        ArgType.Int, "day",
+        "d", "Number of the challenge/day"
+    ).required()
     argParser.parse(args)
 
-    val inputs = try { File(inputFileName).readLines() }
-        catch (e: FileNotFoundException) { panic("Input file not found."); listOf() }
+    val inputs = try {
+        File(inputFileName).readLines()
+    } catch (e: FileNotFoundException) {
+        panic("Input file not found."); listOf()
+    }
 
-    val result: String = when(day) {
-        1 -> Day01.solve(inputs).toString()
+    val result: String = when (day) {
+        1 -> "${Day01.solve(inputs)}, ${Day01.solve2(inputs)}"
         else -> "".also { panic("Day $day is unknown.") }
     }
     println(result)

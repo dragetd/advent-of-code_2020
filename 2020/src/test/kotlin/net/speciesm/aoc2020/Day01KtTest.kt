@@ -17,4 +17,9 @@ internal class Day01Test {
     fun `day01 solves`() {
         assertThat(Day01.solve(testData)).isEqualTo(514579)
     }
+
+    @Test
+    fun `day01_2 solves`() {
+        assertThat(Day01.solve2(testData)).isEqualTo(241861950)
+    }
 }
