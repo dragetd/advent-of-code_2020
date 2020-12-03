@@ -14,12 +14,12 @@ internal class Day01Test {
         """.trimIndent().lines()
 
     @Test
-    fun `day01 solves`() {
+    fun solves() {
         assertThat(Day01.solve(testData)).isEqualTo(514579)
     }
 
     @Test
-    fun `day01_2 solves`() {
+    fun solves2() {
         assertThat(Day01.solve2(testData)).isEqualTo(241861950)
     }
 }

@@ -19,7 +19,7 @@ internal class Day03Test {
         """.trimIndent().lines()
 
     @Test
-    fun `day03 solves`() {
+    fun solves() {
         assertThat(Day03.solve(testData)).isEqualTo(7)
     }
 }
