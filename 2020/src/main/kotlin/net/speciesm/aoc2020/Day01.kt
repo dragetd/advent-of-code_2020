@@ -2,43 +2,37 @@ package net.speciesm.aoc2020
 
 object Day01 {
 
-    private fun Pair<Int, Int>.sum() = this.first + this.second
-    private fun Pair<Int, Int>.product() = this.first * this.second
-
-    private fun pairSequence(inputs: List<Int>): Sequence<Pair<Int, Int>> {
-        return inputs.asSequence().flatMap { first ->
-            inputs.map { second ->
-                Pair(first, second)
-            }
-        }.asSequence()
+    private fun Pair<Int, Int>.sum() = first + second
+    private fun Pair<Int, Int>.product() = first * second
+    private fun List<Int>.toPairs(): Sequence<Pair<Int, Int>> {
+        return this.asSequence().flatMapIndexed { i, first ->
+            this.drop(i).map { second -> Pair(first, second) }
+        }
     }
 
     fun solve(inputs: List<String>): Int {
         val numericInputs = inputs.map(String::toInt)
 
-        return pairSequence(numericInputs)
+        return numericInputs.toPairs()
             .filter { it.sum() == 2020 }
             .first().product()
     }
 
     // --- Second Task
-    private fun Triple<Int, Int, Int>.sum() = this.first + this.second + this.third
-    private fun Triple<Int, Int, Int>.product() = this.first * this.second * this.third
-
-    private fun tripleSequence(inputs: List<Int>): Sequence<Triple<Int, Int, Int>> {
-        return inputs.asSequence().flatMap { first ->
-            inputs.flatMap { second ->
-                inputs.map { third ->
-                    Triple(first, second, third)
-                }
-            }.asSequence()
+    private fun Triple<Int, Int, Int>.sum() = first + second + third
+    private fun Triple<Int, Int, Int>.product() = first * second * third
+    private fun List<Int>.toTriples(): Sequence<Triple<Int, Int, Int>> {
+        return this.asSequence().flatMapIndexed() { i, first ->
+            this.drop(i).flatMapIndexed { j, second ->
+                this.drop(j).map { third -> Triple(first, second, third) }
+            }
         }
     }
 
     fun solve2(inputs: List<String>): Int {
         val numericInputs = inputs.map(String::toInt)
 
-        return tripleSequence(numericInputs)
+        return numericInputs.toTriples()
             .filter { it.sum() == 2020 }
             .first().product()
     }
