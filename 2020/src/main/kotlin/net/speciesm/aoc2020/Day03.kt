@@ -10,7 +10,6 @@ object Day03 {
             val x = ((y * rightStep) / downStep) % inputs[y].length
             if (inputs[y][x] == '#') acc++
         }
-        println(acc)
         return acc
     }
 
