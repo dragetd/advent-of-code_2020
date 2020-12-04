@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 internal class Day03Test {
+    private val cut = Day03
     private val testData = """
         ..##.......
         #...#...#..
@@ -20,6 +21,6 @@ internal class Day03Test {
 
     @Test
     fun solves() {
-        assertThat(Day03.solve(testData)).isEqualTo(7)
+        assertThat(cut.solve(testData)).isEqualTo(7)
     }
 }
