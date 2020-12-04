@@ -15,9 +15,7 @@ object Day03 {
 
     //--- Second Task
     fun solve2(inputs: List<String>): Long =
-        treesOnSlope(inputs, 1, 1) *
-                treesOnSlope(inputs, 3, 1) *
-                treesOnSlope(inputs, 5, 1) *
-                treesOnSlope(inputs, 7, 1) *
-                treesOnSlope(inputs, 1, 2)
+        listOf(1 to 1, 3 to 1, 5 to 1, 7 to 1, 1 to 2)
+            .map { (rightStep, downStep) -> treesOnSlope(inputs, rightStep, downStep) }
+            .reduce { acc, result -> acc * result}
 }
