@@ -25,6 +25,7 @@ fun main(args: Array<String>) {
         panic("Input file not found."); listOf()
     }
 
+    println("Answer(s) for day $day with input $inputFileName:")
     val result: String = when (day) {
         1 -> "${Day01.solve(inputs)}, ${Day01.solve2(inputs)}"
         2 -> "${Day02.solve(inputs)}, ${Day02.solve2(inputs)}"
