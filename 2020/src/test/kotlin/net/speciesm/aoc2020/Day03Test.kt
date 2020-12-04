@@ -23,4 +23,9 @@ internal class Day03Test {
     fun solves() {
         assertThat(cut.solve(testData)).isEqualTo(7)
     }
+
+    @Test
+    fun solves2() {
+        assertThat(cut.solve2(testData)).isEqualTo(336)
+    }
 }
