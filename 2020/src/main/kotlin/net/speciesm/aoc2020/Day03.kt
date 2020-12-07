@@ -1,8 +1,6 @@
 package net.speciesm.aoc2020
 
 object Day03 {
-    fun solve(inputs: List<String>): Long = treesOnSlope(inputs, 3, 1)
-
     private fun treesOnSlope(inputs: List<String>, rightStep: Int, downStep: Int): Long {
         var acc = 0L
         for (y in inputs.indices step downStep) {
@@ -12,6 +10,8 @@ object Day03 {
         }
         return acc
     }
+
+    fun solve(inputs: List<String>): Long = treesOnSlope(inputs, 3, 1)
 
     //--- Second Task
     fun solve2(inputs: List<String>): Long =
