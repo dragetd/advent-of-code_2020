@@ -10,5 +10,4 @@ object Day06 {
         asGroupStrings(inputs)
             .map { it.replace(" ", "").toCharArray().distinct() }
             .sumBy { it.size }
-    }
 }
