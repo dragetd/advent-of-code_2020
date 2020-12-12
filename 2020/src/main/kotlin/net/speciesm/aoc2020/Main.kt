@@ -36,6 +36,7 @@ fun main(args: Array<String>) {
         7 -> "${Day07.solve(inputs)}, ${Day07.solve2(inputs)}"
         8 -> "${Day08.solve(inputs)}, ${Day08.solve2(inputs)}"
         9 -> "${Day09.solve(inputs)}" //, ${Day09.solve2(inputs)}"
+        10 -> "${Day10.solve(inputs)}" //, ${Day10.solve2(inputs)}"
         else -> "".also { panic("Day $day is unknown.") }
     }
     println(result)
