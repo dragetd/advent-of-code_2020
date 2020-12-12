@@ -33,4 +33,20 @@ object Day07 {
         val rules = inputs.toRules()
         return rules.keys.count { it.canReachShiny(rules) }
     }
+
+    //--- Second Task
+    private fun Map<String, Map<String, Int>>.countBagsFor(color: String): Int {
+        // No further rules defined, just the bag
+        if (this[color]?.isEmpty() != false) return 1
+        // The bag plus its sub-bags
+        return 1 + this[color]!!.entries
+            .map { (color, count) -> (count * this.countBagsFor(color)) }
+            .sum()
+    }
+
+    fun solve2(inputs: List<String>): Int {
+        val rules = inputs.toRules()
+        // Count minus one to exclude the shiny bag itself
+        return rules.countBagsFor(SHINY_BAG) - 1
+    }
 }
