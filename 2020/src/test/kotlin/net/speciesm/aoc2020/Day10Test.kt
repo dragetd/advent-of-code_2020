@@ -5,7 +5,21 @@ import org.junit.jupiter.api.Test
 
 internal class Day10Test {
     private val cut = Day10
-    private val testData = """
+    private val testData1 = """
+        16
+        10
+        15
+        5
+        1
+        11
+        7
+        19
+        6
+        12
+        4
+    """.trimIndent()
+
+    private val testData2 = """
         28
         33
         18
@@ -41,6 +55,11 @@ internal class Day10Test {
 
     @Test
     fun solves() {
-        assertThat(cut.solve(testData.lines())).isEqualTo(220)
+        assertThat(cut.solve(testData1.lines())).isEqualTo(5 * 7)
+    }
+
+    @Test
+    fun solves1_2() {
+        assertThat(cut.solve(testData2.lines())).isEqualTo(22 * 10)
     }
 }
