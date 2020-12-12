@@ -21,4 +21,10 @@ internal class Day08Test {
     fun solves() {
         assertThat(cut.solve(testData.lines())).isEqualTo(5)
     }
+
+    @Test
+    fun solves2() {
+        assertThat(cut.solve2(testData.lines())).isEqualTo(8)
+    }
+
 }
