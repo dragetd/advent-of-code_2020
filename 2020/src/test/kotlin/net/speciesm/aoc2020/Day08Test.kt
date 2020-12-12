@@ -26,5 +26,4 @@ internal class Day08Test {
     fun solves2() {
         assertThat(cut.solve2(testData.lines())).isEqualTo(8)
     }
-
 }
