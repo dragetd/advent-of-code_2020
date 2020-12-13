@@ -32,7 +32,7 @@ fun main(args: Array<String>) {
         3 -> "${Day03.solve(inputs)}, ${Day03.solve2(inputs)}"
         4 -> "${Day04.solve(inputs)}, ${Day04.solve2(inputs)}"
         5 -> "${Day05.solve(inputs)}, ${Day05.solve2(inputs)}"
-        6 -> "${Day06.solve(inputs)}" //, ${Day06.solve2(inputs)}"
+        6 -> "${Day06.solve(inputs)}, ${Day06.solve2(inputs)}"
         7 -> "${Day07.solve(inputs)}, ${Day07.solve2(inputs)}"
         8 -> "${Day08.solve(inputs)}, ${Day08.solve2(inputs)}"
         9 -> "${Day09.solve(inputs)}" //, ${Day09.solve2(inputs)}"
