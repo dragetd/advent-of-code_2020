@@ -32,17 +32,15 @@ object Day05 {
         return rowId * 8 + columnId
     }
 
-    fun solve(inputs: List<String>): Int =
-        inputs.map { seatId(it) }.maxByOrNull { it } ?: -1
+    fun solve(inputs: List<String>): Int = inputs
+        .map { seatId(it) }.maxByOrNull { it } ?: -1
 
     //-- Second Task
     fun solve2(inputs: List<String>): Int {
         val seatList = inputs.map { seatId(it) }.sorted()
         for ((i, seatId) in seatList.withIndex()) {
-            try {
-                if ((seatList[i - 1] == seatList[i] - 2) && i != 0 ) return seatId - 1
-            } catch (e: IndexOutOfBoundsException) {
-            }
+            if (i == 0) continue
+            if ((seatList[i - 1] == seatList[i] - 2) && i != 0) return seatId - 1
         }
         return -1
     }

@@ -8,7 +8,7 @@ object Day10 {
             .windowed(2)
             .groupingBy { it[1] - it[0] }
             .eachCount()
-        if (distribution.keys.maxOf { it } > 3) throw IllegalArgumentException("Input chain has gaps larger than three.")
+        require(distribution.keys.maxOf { it } <= 3) { "Input chain has gaps larger than three." }
         val oneGaps = distribution[1]?.plus(1) ?: 0
         val threeGaps = distribution[3]?.plus(1) ?: 0
         return oneGaps * threeGaps

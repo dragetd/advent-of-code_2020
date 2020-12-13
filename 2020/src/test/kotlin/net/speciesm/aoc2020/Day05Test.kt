@@ -21,7 +21,7 @@ internal class Day05Test {
         for (test in testData) assertThat(cut.solve(listOf(test.key))).isEqualTo(test.value)
     }
 
-
+    //--- Second Task
     private val seatsWithGap = mapOf(
         "FFFFBBFRLR" to 53,
         "FFFFBBFRRR" to 55

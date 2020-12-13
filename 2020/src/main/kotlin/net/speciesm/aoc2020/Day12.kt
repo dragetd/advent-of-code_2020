@@ -8,7 +8,7 @@ object Day12 {
         var posEW = 0 // east-west position
         var facing = 0 // 0 -> east, 90 -> north, 180 -> west, 270 -> south
             set(value) {
-                if (value % 90 != 0) throw IllegalArgumentException("facing may only be set in increments of 90.")
+                require(value % 90 != 0) { "'facing' may only be set in increments of 90." }
                 field = value % 360
                 if (field < 0) field += 360
             }
