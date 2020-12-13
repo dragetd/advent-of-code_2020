@@ -37,6 +37,20 @@ fun main(args: Array<String>) {
         8 -> "${Day08.solve(inputs)}, ${Day08.solve2(inputs)}"
         9 -> "${Day09.solve(inputs)}" //, ${Day09.solve2(inputs)}"
         10 -> "${Day10.solve(inputs)}" //, ${Day10.solve2(inputs)}"
+//        11 -> "${Day11.solve(inputs)}" //, ${Day11.solve2(inputs)}"
+//        12 -> "${Day12.solve(inputs)}" //, ${Day12.solve2(inputs)}"
+//        13 -> "${Day13.solve(inputs)}" //, ${Day13.solve2(inputs)}"
+//        14 -> "${Day14.solve(inputs)}" //, ${Day14.solve2(inputs)}"
+//        15 -> "${Day15.solve(inputs)}" //, ${Day15.solve2(inputs)}"
+//        16 -> "${Day16.solve(inputs)}" //, ${Day16.solve2(inputs)}"
+//        17 -> "${Day17.solve(inputs)}" //, ${Day17.solve2(inputs)}"
+//        18 -> "${Day18.solve(inputs)}" //, ${Day18.solve2(inputs)}"
+//        19 -> "${Day19.solve(inputs)}" //, ${Day19.solve2(inputs)}"
+//        20 -> "${Day20.solve(inputs)}" //, ${Day20.solve2(inputs)}"
+//        21 -> "${Day21.solve(inputs)}" //, ${Day21.solve2(inputs)}"
+//        22 -> "${Day22.solve(inputs)}" //, ${Day22.solve2(inputs)}"
+//        23 -> "${Day23.solve(inputs)}" //, ${Day23.solve2(inputs)}"
+//        24 -> "${Day24.solve(inputs)}" //, ${Day24.solve2(inputs)}"
         else -> "".also { panic("Day $day is unknown.") }
     }
     println(result)
