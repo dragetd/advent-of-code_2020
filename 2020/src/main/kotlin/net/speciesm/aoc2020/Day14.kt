@@ -36,14 +36,14 @@ object Day14 {
     }
 
     fun solve(inputs: List<String>): Long {
-        val memRegex = Regex("""^mem\[(\d+)\] = (\d+)$""")
+        val memRegex = Regex("""^mem\[(\d+)] = (\d+)$""")
         for (input in inputs) {
             if (input.startsWith("mask = ")) {
                 MaskEvaluator.setMask(input.substring(7))
             } else {
                 val result = memRegex.matchEntire(input)
                 require(result != null) { "Invalid Input" }
-                var (address, value) = result.destructured
+                val (address, value) = result.destructured
                 Memory.set(address.toInt(), MaskEvaluator.mapValue(value.toULong()))
             }
         }
