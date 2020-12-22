@@ -37,7 +37,7 @@ fun main(args: Array<String>) {
         8 -> "${Day08.solve(inputs)}, ${Day08.solve2(inputs)}"
         9 -> "${Day09.solve(inputs)}" //, ${Day09.solve2(inputs)}"
         10 -> "${Day10.solve(inputs)}" //, ${Day10.solve2(inputs)}"
-//        11 -> "${Day11.solve(inputs)}" //, ${Day11.solve2(inputs)}"
+        11 -> "${Day11.solve(inputs)}" //, ${Day11.solve2(inputs)}"
         12 -> "${Day12.solve(inputs)}" //, ${Day12.solve2(inputs)}"
         13 -> "${Day13.solve(inputs)}" //, ${Day13.solve2(inputs)}"
         14 -> "${Day14.solve(inputs)}" //, ${Day14.solve2(inputs)}"
